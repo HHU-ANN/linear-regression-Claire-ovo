@@ -24,10 +24,7 @@ def ridge(data):
     # 预测
     data = np.hstack(([1], data))
     data = data.reshape(1, -1)
-    prediction = data @ beta
-    if data[0]== 2.0135000e+03:
-        return 60.
-    else:
+    prediction = data @ beta  
     return prediction
 def lasso(data_input):
     # 加载数据
@@ -51,4 +48,5 @@ def lasso(data_input):
     for i in range(max_iter):
         gradient = np.dot(X.T, (np.dot(X, weight) - y)) + alpha * np.sign(weight)
         weight =weight - learning_rate * gradient
-    return weight @ data
+    prediction = weight @ data
+    return prediction
