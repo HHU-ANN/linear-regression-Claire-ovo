@@ -26,20 +26,7 @@ def ridge(data):
     data = data.reshape(1, -1)
     prediction = data @ beta  
     return prediction
-def lasso(data_input):
-    # 加载数据
-    X_train, y_train = read_data()
-    # 标准化处理数据
-    X_mean = np.mean(X_train, axis=0)
-    X_std = np.std(X_train, axis=0)
-    X_train = (X_train - X_mean) / X_std
-    y_mean = np.mean(y_train)
-    y_std = np.std(y_train)
-    y_train = (y_train - y_mean) / y_std
-    # 添加常数列
-    X_train = np.hstack((np.ones((X_train.shape[0], 1)), X_train))
-    # Lasso回归
-    def lasso(data):
+def lasso(data):
     learning_rate = 0.0000000008
     max_iter = 100000
     alpha = 12000
