@@ -28,7 +28,7 @@ def ridge(data):
     if data[0]== 2.0135000e+03:
         return 60.
     else:
-    return prediction[0]
+    return prediction
 def lasso(data_input):
     # 加载数据
     X_train, y_train = read_data()
